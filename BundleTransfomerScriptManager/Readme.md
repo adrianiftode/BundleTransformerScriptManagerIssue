@@ -1,0 +1,2 @@
+# Bundle Transformer and ScriptManager Issue
+**ScriptManager** is not aware of the bundled scripts registered with **[Bundle Transformer]**(https://bundletransformer.codeplex.com/)  and it emits its original scripts
