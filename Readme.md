@@ -13,3 +13,5 @@ The following list should not appear in the HTML code, but only the *bundles/Web
     &lt;script src="Scripts/WebForms/WebParts.js" type="text/javascript"&gt;&lt;/script&gt;
     &lt;script src="Scripts/WebForms/Focus.js" type="text/javascript"&gt;&lt;/script&gt;
 </pre>
+
+This is a project which demonstrates the issue
