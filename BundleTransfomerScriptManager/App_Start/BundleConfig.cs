@@ -1,7 +1,7 @@
 ﻿using BundleTransformer.Core.Builders;
 using BundleTransformer.Core.Bundles;
 using BundleTransformer.Core.Orderers;
-using BundleTransformer.Core.Transformers;
+using BundleTransformer.Core.Resolvers;
 using System.Web.Optimization;
 
 namespace BundleTransfomerScriptManager
@@ -11,9 +11,9 @@ namespace BundleTransfomerScriptManager
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkID=303951
         public static void RegisterBundles(BundleCollection bundles)
         {
+            BundleResolver.Current = new CustomBundleResolver();
+
             var builder = new NullBuilder();
-            var styleTransformer = new StyleTransformer();
-            var scriptTransformer = new ScriptTransformer();
             var orderer = new NullOrderer();
 
             var webFormsJS = new CustomScriptBundle("~/bundles/WebFormsJs")
@@ -28,7 +28,6 @@ namespace BundleTransfomerScriptManager
           ;
             webFormsJS.Builder = builder;
             webFormsJS.Orderer = orderer;
-            webFormsJS.Transforms.Add(scriptTransformer);
 
             bundles.Add(webFormsJS);
         }
